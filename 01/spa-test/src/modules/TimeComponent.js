@@ -1,6 +1,6 @@
-import React, {useState, useEffect} from 'react';
+import React, { useState, useEffect } from 'react';
 
-const TimeComponent = props => {
+const TimeComponent = () => {
   const [time, setTime] = useState(new Date());
 
   useEffect (() => {
@@ -12,9 +12,7 @@ const TimeComponent = props => {
   })
 
   return (
-    <div>
-      <h2>Сейчас {time.toLocaleTimeString()}.</h2>
-    </div>
+    <h2>Сейчас {time.toLocaleTimeString()}.</h2>
   );
 }
 
