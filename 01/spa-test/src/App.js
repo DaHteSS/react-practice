@@ -1,27 +1,12 @@
 import React from 'react';
-import logo from './logo.svg';
 import './App.css';
-import HeaderMenu from './modules/header.js';
+import TimeComponent from './modules/TimeComponent';
 
 function App() {
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <HeaderMenu />
-        <List />
-        </header>
+      <TimeComponent />
     </div>
-  );
-}
-
-const List = () => {
-  return (
-    <ul>
-      <li>Первое</li>
-      <li>Второе</li>
-      <li>Третье</li>
-    </ul>
   );
 }
 
