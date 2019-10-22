@@ -4,7 +4,9 @@
   width: 97%;
   min-height: 70px;
   margin: 10px auto;
+  padding: 0 20px;
   background: #fafafa;
+  box-sizing: border-box;
 }
 
 .avatar {
@@ -12,5 +14,15 @@
   width: 50px;
   height: 50px;
   background-color: #4DCCBD;
-  margin: 0 10px;
+  margin: 0 10px 0 0;
+}
+
+.likes {
+  display: flex;
+  align-items: center;
+  margin: 0 0 0 auto;
+}
+
+.likes img {
+  margin: 0 0 0 3px;
 }
