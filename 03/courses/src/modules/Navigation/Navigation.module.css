@@ -1,0 +1,15 @@
+.nav {
+  grid-area: n;
+  background-color: #028090;
+  padding: 20px;
+  font-weight: 500;
+}
+
+.link {
+  color: #4DCCBD;
+  text-decoration: none;
+}
+
+.link:hover, .active {
+  color: #FF8484;
+}
