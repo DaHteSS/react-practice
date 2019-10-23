@@ -8,7 +8,12 @@ body {
   grid-template-areas: "h h" "n c";
   grid-template-rows: 60px 1fr;
   grid-template-columns: 2fr 10fr;
-  width: 1200px;
+  max-width: 1200px;
   margin: 0 auto;
   grid-gap: 10px;
+}
+
+.app__content {
+  grid-area: c;
+  background-color: #05668D;
 }

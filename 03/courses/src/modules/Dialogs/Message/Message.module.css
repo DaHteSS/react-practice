@@ -1,0 +1,15 @@
+.message {
+  width: 100%;
+  margin: 0 0 10px;
+  display: flex;
+  align-items: center;
+  min-height: 30px;
+}
+
+.message__text {
+  background: #eeeded;
+  display: block;
+  min-height: 20px;
+  padding: 5px 20px;
+  border-radius: 5px;
+}

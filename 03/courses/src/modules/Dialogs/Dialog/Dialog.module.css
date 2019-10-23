@@ -1,0 +1,12 @@
+.dialog {
+
+}
+
+.name {
+  font-weight: 700;
+  text-decoration: none;
+  color: #fff;
+}
+.dialog_active {
+  color: #FF8484;
+}
