@@ -1,14 +1,16 @@
 import React from 'react';
 import classes from './Profile.module.css';
 import MyPosts from './MyPosts/MyPosts.jsx';
+import ProfileInfo from './ProfileInfo/ProfileInfo.jsx';
 
 
-const Profile = () => (
-  <div>
-    <div className={classes.bg}></div>
-    <img width="50" height="50" src={require('./../../img/avatar.jpg')} alt="Avatar" />
-    <MyPosts />
-  </div>
-);
+const Profile = (props) => {
+  return (
+    <div>
+      <ProfileInfo />
+      <MyPosts postsData={props.state.postsData} />
+    </div>
+  );
+}
 
 export default Profile;

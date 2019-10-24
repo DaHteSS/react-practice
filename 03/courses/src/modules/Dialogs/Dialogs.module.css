@@ -3,9 +3,8 @@
   grid-template-columns: 3fr 9fr;
   padding: 20px;
   grid-gap: 10px;
+  height: 100%;
 }
-
-.dialogItems {}
 
 .dialogItems .active {
   color: #FF8484;

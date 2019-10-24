@@ -1,0 +1,14 @@
+.friends {
+  color: #fff;
+}
+
+.friends h2 {
+  width: 100%;
+  font-weight: 400;
+}
+
+.friendItems {
+  width: 100%;
+  display: flex;
+  flex-wrap: wrap;
+}

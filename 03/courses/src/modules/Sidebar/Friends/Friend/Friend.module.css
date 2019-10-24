@@ -1,0 +1,16 @@
+.avatar {
+  width: 30px;
+  height: 30px;
+  border-radius: 50%;
+  background-color: #FF8484;
+  margin: 0 auto;
+}
+
+.name {
+  font-size: 12px;
+}
+
+.friend {
+  width: calc(100% / 3);
+  text-align: center;
+}

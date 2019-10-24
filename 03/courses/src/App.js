@@ -1,29 +1,37 @@
 import React from 'react';
 import './App.css';
 import Header from './modules/Header/Header.jsx';
-import Navigation from './modules/Navigation/Navigation.jsx';
 import Profile from './modules/Profile/Profile.jsx';
 import Dialogs from './modules/Dialogs/Dialogs.jsx';
 import News from './modules/News/News.jsx';
 import Music from './modules/Music/Music.jsx';
 import Settings from './modules/Settings/Settings.jsx';
 import { BrowserRouter, Route } from 'react-router-dom';
+import Sidebar from './modules/Sidebar/Sidebar.jsx';
 
 
-const App = () => (
-  <BrowserRouter>
-    <div className="app__wrapper">
-      <Header />
-      <Navigation />
-      <div className="app__content">
-        <Route path="/profile" component={Profile} />
-        <Route path="/dialogs" component={Dialogs} />
-        <Route path="/feed" component={News} />
-        <Route path="/music" component={Music} />
-        <Route path="/settings" component={Settings} />
+const App = (props) => {
+  return (
+    <BrowserRouter>
+      <div className="app__wrapper">
+        <Header />
+        <Sidebar state={props.state.sidebar}/>
+        <div className="app__content">
+          <Route
+            path="/profile"
+            render={() => <Profile state={props.state.profilePage}/>}
+          />
+          <Route
+            path="/dialogs"
+            render={() => (
+              <Dialogs state={props.state.dialogsPage} />)}
+          />
+          <Route path="/feed" render={() => <News />} />
+          <Route path="/music" render={() => <Music />} />
+          <Route path="/settings" render={() => <Settings />} />
+        </div>
       </div>
-    </div>
-  </BrowserRouter>
-);
-
+    </BrowserRouter>
+  );
+}
 export default App;

@@ -3,22 +3,18 @@ import classes from './MyPosts.module.css';
 import Post from './Post/Post.jsx'
 
 
-const MyPosts = () => (
-  <div className={classes.items}>
-    <form>
-      <textarea required></textarea>
-      <input type="submit" value="Send"/>
-    </form>
-    
-    <Post
-      message="Hehe boiiii"
-      likeCount="10"
-    />
-    <Post
-      message="First comment..."
-      likeCount="30"
-    />
-  </div>
-);
+const MyPosts = (props) => {
+  const PostToRender = props.postsData.map((post, key) => <Post key={key} message={post.message} likeCount={post.likeCount} />);
+
+  return (
+    <div className={classes.items}>
+      <form>
+        <textarea required></textarea>
+        <input type="submit" value="Send" />
+      </form>
+      {PostToRender}
+    </div>
+  );
+}
 
 export default MyPosts;

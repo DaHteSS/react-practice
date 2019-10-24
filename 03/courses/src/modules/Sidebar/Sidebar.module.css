@@ -1,0 +1,6 @@
+.sidebar {
+  grid-area: n;
+  background-color: #028090;
+  padding: 20px;
+  font-weight: 500;
+}

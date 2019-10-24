@@ -3,22 +3,20 @@ import classes from './Dialogs.module.css';
 import Dialog from './Dialog/Dialog.jsx';
 import Message from './Message/Message.jsx';
 
-const Dialogs = (props) => (
-  <div className={classes.dialogs}>
-    <div className={classes.dialogItems}>
-      <Dialog id="78312" name="Andrey" />
-      <Dialog id="84913" name="Daniil" />
-      <Dialog id="85930" name="Artem" />
-      <Dialog id="84912" name="Oleg" />
-      <Dialog id="95831" name="Nastya" />
+const Dialogs = (props) => {
+  const DialogsToRender = props.state.dialogsData.map((dialog, key) => <Dialog key={key} id={dialog.id} name={dialog.name} />);
+  const MessageToRender = props.state.messageData.map((message, key) => <Message key={key} message={message.message} />);
+
+  return (
+    <div className={classes.dialogs}>
+      <div className={classes.dialogItems}>
+        {DialogsToRender}
+      </div>
+      <div className={classes.messages}>
+        {MessageToRender}
+      </div>
     </div>
-    <div className={classes.messages}>
-      <Message message="Привет" />
-      <Message message="Чо каво?" />
-      <Message message="Ну и где ты?" />
-      <Message message="Пойдём на Джокера в субботу?" />
-    </div>
-  </div>
-);
+  );
+}
 
 export default Dialogs;
