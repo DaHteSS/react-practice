@@ -6,14 +6,25 @@ import Post from './Post/Post.jsx'
 const MyPosts = (props) => {
   const PostToRender = props.postsData.map((post, key) => <Post key={key} message={post.message} likeCount={post.likeCount} />);
 
+  const newPostElement = React.createRef();
+
+  const addPost = () => {
+    let text = newPostElement.current.value;
+
+    props.addPost(text);
+    newPostElement.current.value = '';
+  }
+
   return (
-    <div className={classes.items}>
-      <form>
-        <textarea required></textarea>
-        <input type="submit" value="Send" />
+    <>
+      <form className={classes.post_new}>
+        <textarea required ref={newPostElement} />
+        <input onClick={addPost} type="button" value="Send" />
       </form>
-      {PostToRender}
-    </div>
+      <div className={classes.items}>
+        {PostToRender}
+      </div>
+    </>
   );
 }
 

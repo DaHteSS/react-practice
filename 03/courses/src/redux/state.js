@@ -1,8 +1,10 @@
+import { rerender } from "../render";
+
 const state = {
   profilePage: {
     postsData: [
-      { id: 1, message: "Hehe boiiii", likeCount: 10 },
-      { id: 2, message: "First comment...", likeCount: 30 }
+      { id: 1, message: "First comment...", likeCount: 88 },
+      { id: 2, message: "Hehe boiiii", likeCount: 14 }
     ]
   },
   dialogsPage: {
@@ -28,5 +30,16 @@ const state = {
     ]
   }
 };
+
+export const addPost = (postMessage) => {
+  let newPost = {
+    id: 5,
+    message: postMessage,
+    likeCount: 0
+  };
+
+  state.profilePage.postsData.push(newPost);
+  rerender(state);
+}
 
 export default state;
