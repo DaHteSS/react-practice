@@ -23,7 +23,7 @@ const Dialogs = (props) => {
 
         <form>
           <textarea ref={newMessage} />
-          <input onClick={addMessage} type="submit" value="Send" />
+          <input onClick={addMessage} type="button" value="Send" />
         </form>
       </div>
     </div>
