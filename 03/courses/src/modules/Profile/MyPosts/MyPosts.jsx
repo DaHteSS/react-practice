@@ -8,16 +8,27 @@ const MyPosts = (props) => {
 
   const newPostElement = React.createRef();
 
+  const addPost = () => {
+    props.dispatch({ type: 'ADD-POST' });
+  }
+
   const onPostChange = () => {
-    let text = newPostElement.current.value;
-    props.updateNewPostText(text);
+    const text = newPostElement.current.value;
+    const action = { type: 'UPDATE-NEW-POST-TEXT', newText: text };
+    props.dispatch(action);
   }
 
   return (
     <>
       <form className={classes.post_new}>
-        <textarea onChange={onPostChange} required ref={newPostElement} value={props.newPostText} />
-        <input onClick={props.addPost} type="button" value="Send" />
+        <textarea
+          onChange={onPostChange}
+          ref={newPostElement}
+          placeholder="Type smth..."
+          value={props.newPostText}
+          required
+        />
+        <input onClick={addPost} type="button" value="Send" />
       </form>
       <div className={classes.items}>
         {PostToRender}
