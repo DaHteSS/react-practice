@@ -6,7 +6,7 @@ import ProfileInfo from './ProfileInfo/ProfileInfo.jsx';
 
 const Profile = (props) => {
   return (
-    <div>
+    <div className={classes.profile}>
       <ProfileInfo />
       <MyPosts
         postsData={props.state.postsData}

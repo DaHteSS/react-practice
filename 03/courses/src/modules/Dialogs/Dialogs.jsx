@@ -2,15 +2,19 @@ import React from 'react';
 import classes from './Dialogs.module.css';
 import Dialog from './Dialog/Dialog.jsx';
 import Message from './Message/Message.jsx';
+import { addMessageCreator, updateNewMessageTextCreator } from './../../redux/dialogs-reducer'
 
 const Dialogs = (props) => {
   const DialogsToRender = props.state.dialogsData.map((dialog, key) => <Dialog key={key} id={dialog.id} name={dialog.name} />);
   const MessageToRender = props.state.messageData.map((message, key) => <Message key={key} message={message.message} />);
-  const newMessage = React.createRef();
 
   const addMessage = () => {
-    let text = newMessage.current.value;
-    alert(text);
+    props.dispatch(addMessageCreator());
+  }
+
+  const onMessageChange = (e) => {
+    const text = e.target.value;
+    props.dispatch(updateNewMessageTextCreator(text));
   }
 
   return (
@@ -20,9 +24,12 @@ const Dialogs = (props) => {
       </div>
       <div className={classes.messages}>
         {MessageToRender}
-
         <form>
-          <textarea ref={newMessage} />
+          <textarea
+            onChange={onMessageChange}
+            value={props.newMessageText}
+            placeholder="Type smth..."
+          />
           <input onClick={addMessage} type="button" value="Send" />
         </form>
       </div>

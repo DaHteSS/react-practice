@@ -1,4 +1,4 @@
-import store from './redux/state'
+import store from './redux/redux-store'
 import * as serviceWorker from './serviceWorker';
 import React from 'react';
 import ReactDOM from 'react-dom';
@@ -14,6 +14,9 @@ const rerender = (state) => {
 }
 
 rerender(store.getState());
-store.subscribe(rerender);
+store.subscribe(() => {
+  let state = store.getState();
+  rerender(state);
+});
 
 serviceWorker.unregister();
